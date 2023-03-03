@@ -1,0 +1,23 @@
+@font-face {
+  font-family: "Ubuntu";
+  src: url("./Ubuntu-Regular.ttf") format("truetype"),
+    url("./Ubuntu-Regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Ubuntu";
+  src: url("./Ubuntu-Medium.ttf") format("truetype"),
+    url("./Ubuntu-Medium.otf") format("opentype");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Ubuntu";
+  src: url("./Ubuntu-Bold.ttf") format("truetype"),
+    url("./Ubuntu-Bold.otf") format("opentype");
+  font-weight: 700;
+  font-style: normal;
+}
