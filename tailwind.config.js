@@ -4,17 +4,20 @@ module.exports = {
   theme: {
     extend: {
       backgroundImage: {
-        'sidebar-desktop': "url(./../src/images/bg-sidebar-desktop.svg)",
-        'sidebar-mobile': "url(./../src/images/bg-sidebar-mobile.svg)",
+        "sidebar-desktop": "url(./../src/images/bg-sidebar-desktop.svg)",
+        "sidebar-mobile": "url(./../src/images/bg-sidebar-mobile.svg)",
       },
       height: {
-        'card': '608px',
-        'sidebar': '568px',
-        'stepButton': '35px',
+        card: "608px",
+        sidebar: "568px",
+        stepButton: "35px",
       },
       width: {
-        'stepButton': '35px',
-      }
+        stepButton: "35px",
+      },
+      margin: {
+        "20%": "20%",
+      },
     },
     fontFamily: {
       ubuntu: ["Ubuntu", "sans-serif"],
