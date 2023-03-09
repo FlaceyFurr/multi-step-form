@@ -55,7 +55,7 @@ const StepFormOne = () => {
           </div>
         </div>
       </div>
-      <div className="ml-20% mt-8">
+      <div className="ml-20% mt-8 w-3/6">
         <h2 className="text-marineBlue text-4xl font-bold mb-3">
           Personal info
         </h2>

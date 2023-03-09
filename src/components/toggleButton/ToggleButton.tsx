@@ -1,9 +1,9 @@
-import React, { useState } from "react";
+import { useState } from "react";
 
 const ToggleButton = () => {
   const [isActive, setActive] = useState(false);
 
-  const toggleClassActive = () => {
+  const toggleActive = () => {
     setActive(!isActive);
   };
 
@@ -21,7 +21,7 @@ const ToggleButton = () => {
           id="checkboxToggle"
           type="checkbox"
           className="sr-only peer"
-          onChange={toggleClassActive}
+          onChange={toggleActive}
         />
         <div className="w-11 h-6 rounded-full peer-checked:after:translate-x-full after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all"></div>
       </label>
