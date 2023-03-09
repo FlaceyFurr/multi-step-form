@@ -1,7 +1,8 @@
-import StepFormFour from "../components/stepFormFour/StepFormFour";
 import StepFormOne from "../components/stepFormOne/StepFormOne";
-import StepFormThree from "../components/stepFormThree/StepFormThree";
 import StepFormTwo from "../components/stepFormTwo/StepFormTwo";
+import StepFormThree from "../components/stepFormThree/StepFormThree";
+import StepFormFour from "../components/stepFormFour/StepFormFour";
+import StepFormSuccess from "../components/stepFormSuccess/StepFormSuccess";
 
 const StepForm = () => {
   return (
@@ -10,7 +11,8 @@ const StepForm = () => {
         {/* <StepFormOne /> */}
         {/* <StepFormTwo /> */}
         {/* <StepFormThree /> */}
-        <StepFormFour />
+        {/* <StepFormFour /> */}
+        <StepFormSuccess />
       </div>
     </div>
   );
