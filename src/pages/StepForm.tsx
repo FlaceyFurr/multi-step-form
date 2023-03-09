@@ -1,3 +1,4 @@
+import StepFormFour from "../components/stepFormFour/StepFormFour";
 import StepFormOne from "../components/stepFormOne/StepFormOne";
 import StepFormThree from "../components/stepFormThree/StepFormThree";
 import StepFormTwo from "../components/stepFormTwo/StepFormTwo";
@@ -8,7 +9,8 @@ const StepForm = () => {
       <div className="bg-sidebar-desktop flex bg-no-repeat h-sidebar m-5 rounded-xl">
         {/* <StepFormOne /> */}
         {/* <StepFormTwo /> */}
-        <StepFormThree />
+        {/* <StepFormThree /> */}
+        <StepFormFour />
       </div>
     </div>
   );
