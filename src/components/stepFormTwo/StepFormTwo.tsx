@@ -84,7 +84,7 @@ const StepFormTwo = ({ nextStep, prevStep }: StepFormTwoProps) => {
           <div className="grid grid-cols-3 gap-5">
             <label
               htmlFor="tariff1"
-              className="block border border-lightGray rounded-lg cursor-pointer"
+              className="block border border-lightGray rounded-lg cursor-pointer hover:border-purplishBlue transition-all duration-300 ease-in"
             >
               <img src={arcade} alt="arcade" className="mx-3 my-3" />
               <h3 className="mt-10 ml-3 font-medium text-marineBlue">Arcade</h3>
@@ -100,7 +100,7 @@ const StepFormTwo = ({ nextStep, prevStep }: StepFormTwoProps) => {
             </label>
             <label
               htmlFor="tariff2"
-              className="block border border-lightGray rounded-lg cursor-pointer"
+              className="block border border-lightGray rounded-lg cursor-pointer hover:border-purplishBlue transition-all duration-300 ease-in"
             >
               <img src={advanced} alt="arcade" className="mx-3 my-3" />
               <h3 className="mt-10 ml-3 font-medium text-marineBlue">
@@ -118,7 +118,7 @@ const StepFormTwo = ({ nextStep, prevStep }: StepFormTwoProps) => {
             </label>
             <label
               htmlFor="tariff3"
-              className="block border border-lightGray rounded-lg cursor-pointer"
+              className="block border border-lightGray rounded-lg cursor-pointer hover:border-purplishBlue transition-all duration-300 ease-in"
             >
               <img src={pro} alt="arcade" className="mx-3 my-3" />
               <h3 className="mt-10 ml-3 font-medium text-marineBlue">Pro</h3>
