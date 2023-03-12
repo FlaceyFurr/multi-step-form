@@ -1,4 +1,10 @@
-const StepFormFour = () => {
+type StepFormFourProps = {
+  nextStep: () => void;
+  prevStep: () => void;
+};
+
+const StepFormFour = ({ nextStep, prevStep }: StepFormFourProps) => {
+
   return (
     <>
       <div className="pl-5 pt-10">
@@ -93,10 +99,11 @@ const StepFormFour = () => {
           </h3>
           <span className="font-bold text-purplishBlue text-xl">+$12/mo</span>
         </div>
-        <button className="mt-28 font-medium text-marineBlue">Go back</button>
+        <button className="mt-28 font-medium text-marineBlue" onClick={prevStep}>Go back</button>
         <button
           type="submit"
           className="bg-marineBlue text-white rounded-lg px-6 py-3 mt-24 float-right hover:bg-purplishBlue transition-all duration-300 ease-in"
+          onClick={nextStep}
         >
           Confirm
         </button>

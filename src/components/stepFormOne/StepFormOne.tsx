@@ -1,4 +1,13 @@
-const StepFormOne = () => {
+type StepFormOneProps = {
+  nextStep: () => void;
+};
+
+const StepFormOne = ({ nextStep }: StepFormOneProps) => {
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    nextStep();
+  };
+
   return (
     <>
       <div className="pl-5 pt-10">
@@ -55,14 +64,14 @@ const StepFormOne = () => {
           </div>
         </div>
       </div>
-      <div className="ml-20% mt-8 w-3/6">
+      <div className="ml-20% mt-8 w-7/12">
         <h2 className="text-marineBlue text-4xl font-bold mb-3">
           Personal info
         </h2>
         <p className="text-coolGray text-lg">
           Please provide your name, email adress, and phone number.
         </p>
-        <form className="mt-8">
+        <form className="mt-8" onSubmit={handleSubmit}>
           <label htmlFor="name" className="block text-marineBlue font-medium">
             Name
           </label>
@@ -104,7 +113,7 @@ const StepFormOne = () => {
           />
           <button
             type="submit"
-            className="bg-marineBlue text-white rounded-lg px-6 py-3 mt-24 float-right hover:bg-purplishBlue transition-all duration-300 ease-in"
+            className="bg-marineBlue text-white rounded-lg px-6 py-3 mt-20 float-right hover:bg-purplishBlue transition-all duration-300 ease-in"
           >
             Next Step
           </button>

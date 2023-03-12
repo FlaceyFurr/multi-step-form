@@ -1,6 +1,16 @@
 import ToggleButton from "../toggleButton/ToggleButton";
 
-const StepFormTwo = () => {
+type StepFormTwoProps = {
+  nextStep: () => void;
+  prevStep: () => void;
+};
+
+const StepFormTwo = ({ nextStep, prevStep }: StepFormTwoProps) => {
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    nextStep();
+  };
+
   const arcade: string = require("./../../images/icon-arcade.svg").default;
   const advanced: string = require("./../../images/icon-advanced.svg").default;
   const pro: string = require("./../../images/icon-pro.svg").default;
@@ -61,68 +71,80 @@ const StepFormTwo = () => {
           </div>
         </div>
       </div>
-      <div className="ml-20% mt-8 w-3/6">
+      <div className="ml-20% mt-8 w-7/12">
         <h2 className="text-marineBlue text-4xl font-bold mb-3">
           Select your plan
         </h2>
         <p className="text-coolGray text-lg">
           You have the option of monthly or yearly billing.
         </p>
-        <form className="grid grid-cols-3 gap-5 mt-8">
-          <label
-            htmlFor="tariff1"
-            className="block border border-lightGray rounded-lg cursor-pointer"
+        <form className="mt-8" onSubmit={handleSubmit}>
+          <div className="grid grid-cols-3 gap-5">
+            <label
+              htmlFor="tariff1"
+              className="block border border-lightGray rounded-lg cursor-pointer"
+            >
+              <img src={arcade} alt="arcade" className="mx-3 my-3" />
+              <h3 className="mt-10 ml-3 font-medium text-marineBlue">Arcade</h3>
+              <p className="ml-3 mb-4">$9/mo</p>
+              <input
+                type="radio"
+                name="tariff"
+                id="tariff1"
+                value="9"
+                className="hidden"
+                required
+              />
+            </label>
+            <label
+              htmlFor="tariff2"
+              className="block border border-lightGray rounded-lg cursor-pointer"
+            >
+              <img src={advanced} alt="arcade" className="mx-3 my-3" />
+              <h3 className="mt-10 ml-3 font-medium text-marineBlue">
+                Advanced
+              </h3>
+              <p className="ml-3 mb-4">$12/mo</p>
+              <input
+                type="radio"
+                name="tariff"
+                id="tariff2"
+                value="12"
+                className="hidden"
+                required
+              />
+            </label>
+            <label
+              htmlFor="tariff3"
+              className="block border border-lightGray rounded-lg cursor-pointer"
+            >
+              <img src={pro} alt="arcade" className="mx-3 my-3" />
+              <h3 className="mt-10 ml-3 font-medium text-marineBlue">Pro</h3>
+              <p className="ml-3 mb-4">$15/mo</p>
+              <input
+                type="radio"
+                name="tariff"
+                id="tariff3"
+                value="15"
+                className="hidden"
+                required
+              />
+            </label>
+          </div>
+          <ToggleButton />
+          <button
+            className="mt-28 font-medium text-marineBlue"
+            onClick={prevStep}
           >
-            <img src={arcade} alt="arcade" className="mx-3 my-3" />
-            <h3 className="mt-10 ml-3 font-medium text-marineBlue">Arcade</h3>
-            <p className="ml-3 mb-4">$9/mo</p>
-            <input
-              type="radio"
-              name="tariff"
-              id="tariff1"
-              value="9"
-              className="hidden"
-            />
-          </label>
-          <label
-            htmlFor="tariff2"
-            className="block border border-lightGray rounded-lg cursor-pointer"
-          >
-            <img src={advanced} alt="arcade" className="mx-3 my-3" />
-            <h3 className="mt-10 ml-3 font-medium text-marineBlue">Advanced</h3>
-            <p className="ml-3 mb-4">$12/mo</p>
-            <input
-              type="radio"
-              name="tariff"
-              id="tariff2"
-              value="12"
-              className="hidden"
-            />
-          </label>
-          <label
-            htmlFor="tariff3"
-            className="block border border-lightGray rounded-lg cursor-pointer"
-          >
-            <img src={pro} alt="arcade" className="mx-3 my-3" />
-            <h3 className="mt-10 ml-3 font-medium text-marineBlue">Pro</h3>
-            <p className="ml-3 mb-4">$15/mo</p>
-            <input
-              type="radio"
-              name="tariff"
-              id="tariff3"
-              value="15"
-              className="hidden"
-            />
-          </label>
-        </form>
-        <ToggleButton />
-        <button className="mt-28 font-medium text-marineBlue">Go back</button>
-        <button
+            Go back
+          </button>
+          <button
             type="submit"
             className="bg-marineBlue text-white rounded-lg px-6 py-3 mt-24 float-right hover:bg-purplishBlue transition-all duration-300 ease-in"
           >
             Next Step
           </button>
+        </form>
       </div>
     </>
   );

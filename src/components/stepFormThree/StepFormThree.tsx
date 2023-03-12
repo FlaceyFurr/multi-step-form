@@ -1,6 +1,17 @@
 import { useState } from "react";
 
-const StepFormThree = () => {
+type StepFormThreeProps = {
+  nextStep: () => void;
+  prevStep: () => void;
+};
+
+const StepFormThree = ({ nextStep, prevStep }: StepFormThreeProps) => {
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    nextStep();
+  };
+
+
   const [onlineServiceActive, setOnlineServiceActive] = useState(false);
   const [largerStorageActive, setLargerStorageActive] = useState(false);
   const [customizableProfileActive, setCustomizableProfileActive] =
@@ -79,7 +90,7 @@ const StepFormThree = () => {
         <p className="text-coolGray text-lg">
           Add-ons help enhance your gaming experience.
         </p>
-        <form className="mt-8">
+        <form className="mt-8" onSubmit={handleSubmit}>
           <label
             htmlFor="add-ons1"
             className={`flex border ${
@@ -157,14 +168,19 @@ const StepFormThree = () => {
               </span>
             </div>
           </label>
+          <button
+            className="mt-28 font-medium text-marineBlue"
+            onClick={prevStep}
+          >
+            Go back
+          </button>
+          <button
+            type="submit"
+            className="bg-marineBlue text-white rounded-lg px-6 py-3 mt-24 float-right hover:bg-purplishBlue transition-all duration-300 ease-in"
+          >
+            Next Step
+          </button>
         </form>
-        <button className="mt-28 font-medium text-marineBlue">Go back</button>
-        <button
-          type="submit"
-          className="bg-marineBlue text-white rounded-lg px-6 py-3 mt-24 float-right hover:bg-purplishBlue transition-all duration-300 ease-in"
-        >
-          Next Step
-        </button>
       </div>
     </>
   );
