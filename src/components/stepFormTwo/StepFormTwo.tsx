@@ -1,3 +1,5 @@
+import NextButton from "../nextButton/NextButton";
+import PrevButton from "../prevButton/PrevButton";
 import ToggleButton from "../toggleButton/ToggleButton";
 
 type StepFormTwoProps = {
@@ -132,18 +134,9 @@ const StepFormTwo = ({ nextStep, prevStep }: StepFormTwoProps) => {
             </label>
           </div>
           <ToggleButton />
-          <button
-            className="mt-28 font-medium text-marineBlue"
-            onClick={prevStep}
-          >
-            Go back
-          </button>
-          <button
-            type="submit"
-            className="bg-marineBlue text-white rounded-lg px-6 py-3 mt-24 float-right hover:bg-purplishBlue transition-all duration-300 ease-in"
-          >
-            Next Step
-          </button>
+
+          <PrevButton onClick={prevStep} />
+          <NextButton />
         </form>
       </div>
     </>

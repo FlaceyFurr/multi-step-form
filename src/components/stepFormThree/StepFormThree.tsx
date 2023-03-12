@@ -1,4 +1,6 @@
 import { useState } from "react";
+import NextButton from "../nextButton/NextButton";
+import PrevButton from "../prevButton/PrevButton";
 
 type StepFormThreeProps = {
   nextStep: () => void;
@@ -10,7 +12,6 @@ const StepFormThree = ({ nextStep, prevStep }: StepFormThreeProps) => {
     event.preventDefault();
     nextStep();
   };
-
 
   const [onlineServiceActive, setOnlineServiceActive] = useState(false);
   const [largerStorageActive, setLargerStorageActive] = useState(false);
@@ -168,18 +169,8 @@ const StepFormThree = ({ nextStep, prevStep }: StepFormThreeProps) => {
               </span>
             </div>
           </label>
-          <button
-            className="mt-28 font-medium text-marineBlue"
-            onClick={prevStep}
-          >
-            Go back
-          </button>
-          <button
-            type="submit"
-            className="bg-marineBlue text-white rounded-lg px-6 py-3 mt-24 float-right hover:bg-purplishBlue transition-all duration-300 ease-in"
-          >
-            Next Step
-          </button>
+          <PrevButton onClick={prevStep} />
+          <NextButton />
         </form>
       </div>
     </>

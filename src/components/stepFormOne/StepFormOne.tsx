@@ -1,3 +1,5 @@
+import NextButton from "../nextButton/NextButton";
+
 type StepFormOneProps = {
   nextStep: () => void;
 };
@@ -111,12 +113,7 @@ const StepFormOne = ({ nextStep }: StepFormOneProps) => {
             className="w-full border border-lightGray rounded-lg mt-1 px-3 py-2.5"
             required
           />
-          <button
-            type="submit"
-            className="bg-marineBlue text-white rounded-lg px-6 py-3 mt-20 float-right hover:bg-purplishBlue transition-all duration-300 ease-in"
-          >
-            Next Step
-          </button>
+          <NextButton />
         </form>
       </div>
     </>
